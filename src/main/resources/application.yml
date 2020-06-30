@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: api-gateway
+server:
+  port: 9002
+  tomcat:
+      uri-encoding: utf-8
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8001/eureka/
+
+#下面是自定义的路由规则配置，也可以不用配置，注册中心会把服务自动按照如下格式创建路由规则
+#zuul:
+#  routes:
+#    api-a:                      #该节点名字可自定义取名，多个路由映射，由path-serviceId,属性对来维护
+#      path: /api-a/**
+#      serviceId: service-01
+#    api-b:
+#      path: /api-b/**
+#      serviceId: feign-consumer
+
